@@ -1,0 +1,5 @@
+RewriteEngine On
+# Pretty 404
+ErrorDocument 404 /om-sai-travels/index.php
+# Stop directory listing
+Options -Indexes

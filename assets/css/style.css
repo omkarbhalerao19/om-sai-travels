@@ -1,0 +1,250 @@
+/* =========================================
+   Om Sai Travels - Custom Stylesheet
+   Palette: Light Blue / Red / White
+   ========================================= */
+
+:root {
+  --primary: #29B6F6;        /* light blue */
+  --primary-dark: #0288D1;
+  --accent: #E53935;         /* red */
+  --accent-dark: #B71C1C;
+  --ink: #1B2A41;
+  --muted: #6c7a89;
+  --bg-soft: #F4FAFD;
+}
+
+* { box-sizing: border-box; }
+html, body { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--ink);
+  background: #fff;
+}
+
+h1, h2, h3, h4, .display-1, .display-2, .display-3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Top bar ---------- */
+.top-bar {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 6px 0;
+  font-size: 0.85rem;
+}
+.top-bar a { color: #fff; }
+
+/* ---------- Brand mark ---------- */
+.brand-mark {
+  width: 38px; height: 38px;
+  border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(2,136,209,.25);
+}
+
+/* ---------- Navbar ---------- */
+.navbar { padding: 0.85rem 0; }
+.navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+.nav-link {
+  color: var(--ink) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  position: relative;
+}
+.nav-link.active, .nav-link:hover { color: var(--primary-dark) !important; }
+.nav-link.active::after {
+  content: ""; position: absolute; bottom: -2px; left: 1rem; right: 1rem; height: 3px;
+  background: var(--accent); border-radius: 3px;
+}
+.btn-danger { background: var(--accent); border-color: var(--accent); }
+.btn-danger:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn-primary { background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+.btn-outline-primary { color: var(--primary-dark); border-color: var(--primary); }
+.btn-outline-primary:hover { background: var(--primary); border-color: var(--primary); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 620px;
+  background: linear-gradient(135deg, rgba(2,136,209,.78), rgba(229,57,53,.62)),
+              url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  display: flex; align-items: center;
+}
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; }
+.hero .lead { font-size: 1.1rem; max-width: 560px; }
+
+/* ---------- Search card ---------- */
+.search-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.18);
+  padding: 1.5rem 1.5rem 1rem;
+  color: var(--ink);
+  margin-top: 1rem;
+}
+.search-card label { font-weight: 600; font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.search-card .form-control, .search-card .form-select {
+  border-radius: 10px; padding: .75rem .9rem; border: 1px solid #e6edf3;
+}
+.search-card .form-control:focus, .search-card .form-select:focus {
+  box-shadow: 0 0 0 .2rem rgba(41,182,246,.15); border-color: var(--primary);
+}
+
+/* ---------- Section base ---------- */
+.section { padding: 5rem 0; }
+.section-heading { text-align: center; margin-bottom: 3rem; }
+.section-heading .eyebrow {
+  display: inline-block;
+  text-transform: uppercase; letter-spacing: 3px;
+  font-size: .8rem; color: var(--accent); font-weight: 600;
+}
+.section-heading h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-top: .5rem; }
+
+/* ---------- Feature cards ---------- */
+.feature-card {
+  border: 1px solid #eef3f7;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: all .3s ease;
+  height: 100%;
+  background: #fff;
+}
+.feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 35px rgba(2,136,209,.12); border-color: transparent; }
+.feature-card .icon {
+  width: 60px; height: 60px; border-radius: 14px;
+  background: var(--bg-soft); color: var(--primary-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; margin-bottom: 1rem;
+}
+.feature-card:nth-child(even) .icon { background: #FDECEA; color: var(--accent); }
+
+/* ---------- Route cards ---------- */
+.route-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eef3f7;
+  transition: all .3s ease;
+}
+.route-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.459); }
+.route-card .image { height: 180px; background-size: cover; background-position: center; }
+.route-card .badge-fare {
+  position: absolute; top: 14px; right: 14px;
+  background: var(--accent); color: #fff;
+  padding: 6px 14px; border-radius: 30px; font-weight: 600; font-size: .85rem;
+  box-shadow: 0 6px 14px rgba(229,57,53,.35);
+}
+
+/* ---------- Bus result rows ---------- */
+.bus-card {
+  border: 1px solid #eef3f7; border-radius: 14px;
+  padding: 1.2rem 1.4rem; background: #fff;
+  transition: all .25s ease; margin-bottom: 1rem;
+}
+.bus-card:hover { border-color: var(--primary); box-shadow: 0 14px 30px rgba(2,136,209,.10); }
+.bus-card .bus-type {
+  display: inline-block; font-size: .75rem; padding: 4px 10px;
+  border-radius: 30px; background: var(--bg-soft); color: var(--primary-dark);
+  font-weight: 600; text-transform: uppercase; letter-spacing: .4px;
+}
+.bus-card .time { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); }
+.bus-card .duration { font-size: .9rem; color: var(--muted); }
+.bus-card .fare { font-size: 1.6rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif; }
+
+/* ---------- Seat selector ---------- */
+.seat-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+  max-width: 320px; margin: 0 auto;
+}
+.seat-grid .seat:nth-child(5n+3) { visibility: hidden; }   /* aisle */
+.seat {
+  aspect-ratio: 1; background: #eef3f7; color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; font-size: .75rem; font-weight: 600;
+  cursor: pointer; user-select: none; transition: all .15s ease;
+  border: 2px solid transparent;
+}
+.seat:hover { border-color: var(--primary); }
+.seat.booked { background: #d6dbe0; color: #95a0aa; cursor: not-allowed; }
+.seat.selected { background: var(--primary); color: #fff; border-color: var(--primary-dark); }
+.seat-legend { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .85rem; color: var(--muted); }
+.seat-legend .swatch { width: 18px; height: 18px; border-radius: 4px; display: inline-block; margin-right: 6px; vertical-align: -3px; }
+
+/* ---------- PNR ticket ---------- */
+.ticket {
+  background: #fff;
+  border-radius: 18px; padding: 0; overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0,0,0,.12);
+}
+.ticket .ticket-head {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff; padding: 2rem;
+}
+.ticket .ticket-body { padding: 2rem; }
+.ticket .ticket-divider {
+  position: relative; height: 1px; background: repeating-linear-gradient(90deg, #d6dbe0 0 8px, transparent 8px 16px);
+  margin: 0;
+}
+.ticket .pnr-box {
+  background: #fff; color: var(--ink); display: inline-block;
+  padding: .5rem 1.2rem; border-radius: 8px; font-weight: 700; letter-spacing: 2px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer { background: #0B2545; color: #fff; }
+.site-footer a { color: #cfd8e3; transition: color .2s ease; }
+.site-footer a:hover { color: #fff; }
+.site-footer ul li { margin-bottom: 8px; }
+.site-footer .social-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.08); color: #fff;
+}
+.site-footer .social-btn:hover { background: var(--accent); }
+.copyright { background: #081B36; color: #cfd8e3; }
+
+/* ---------- Mini hero (subpages) ---------- */
+.mini-hero {
+  background: linear-gradient(135deg, rgba(2,136,209,.85), rgba(229,57,53,.6)),
+              url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80') center/cover;
+  color: #fff; padding: 6rem 0 4rem; text-align: center;
+}
+.mini-hero h1 { font-size: 2.6rem; }
+.mini-hero .breadcrumbs { color: rgba(255,255,255,.85); }
+.mini-hero .breadcrumbs a { color: #fff; }
+
+/* ---------- Admin ---------- */
+.admin-shell { display: flex; min-height: 100vh; background: #f5f7fb; }
+.admin-side {
+  width: 240px; background: #0B2545; color: #fff;
+  padding: 1.5rem 0; flex-shrink: 0;
+}
+.admin-side .brand { padding: 0 1.5rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+.admin-side .nav-item { display: block; color: #cfd8e3; padding: .75rem 1.5rem; font-size: .95rem; }
+.admin-side .nav-item:hover, .admin-side .nav-item.active { background: rgba(255,255,255,.06); color: #fff; border-left: 3px solid var(--accent); padding-left: calc(1.5rem - 3px); }
+.admin-main { flex: 1; padding: 2rem; }
+.stat-card {
+  background: #fff; border-radius: 14px; padding: 1.4rem;
+  box-shadow: 0 6px 20px rgba(11,37,69,.06);
+}
+.stat-card .stat-value { font-size: 2rem; font-weight: 700; color: var(--ink); }
+.stat-card .stat-label { color: var(--muted); font-size: .85rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ---------- Helpers ---------- */
+.text-primary { color: var(--primary-dark) !important; }
+.bg-soft { background: var(--bg-soft); }
+.divider-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block; }
+
+@media (max-width: 768px) {
+  .hero { min-height: 520px; }
+  .admin-side { width: 80px; }
+  .admin-side .label { display: none; }
+}
